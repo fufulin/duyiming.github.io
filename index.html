@@ -1,3 +1,97 @@
+<!DOCTYPE html>
 <html>
-  hello,world!
+<head>
+  <title>登录页面</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    .container {
+      max-width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #333;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>用户登录</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="用户名" required>
+      <input type="password" id="password" placeholder="密码" required>
+      <button type="submit">登录</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // 阻止表单提交
+
+      // 获取输入框的值
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // 在这里可以进行登录验证逻辑，例如发送Ajax请求到服务器进行验证
+
+      // 示例：简单的验证逻辑
+      if (username === "admin" && password === "password") {
+        alert("登录成功！");
+        // 在这里可以进行页面跳转或其他操作
+      } else {
+        alert("用户名或密码错误！");
+      }
+    });
+  </script>
+</body>
 </html>
